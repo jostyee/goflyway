@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  goflyway:
+    restart: unless-stopped
+    image: jostyee/goflyway:latest
+    volumes:
+      - ./chinalist.txt:/chinalist.txt:ro
+      - ./goflyway.conf:/goflyway.conf:ro
+    ports:
+      - "8100:8100"
+      - "8101:8101"
